@@ -142,26 +142,24 @@ prints `<address> unreachable` on stdout. IPv4 only.
 
 ## AI Usage
 
-All of `src/lab.c`, `src/main.c` and `tests/lab-test.c`, and this README, were written by an AI
+All of `src/lab.c`, `src/main.c` and `tests/lab-test.c`, and most of this README, were written by an AI
 assistant (Claude) at my request. `src/lab.h` and `tables/example.txt` are copied from the
-handout. The assistant ran the builds, tests, coverage and leak checks in my WSL environment and
+handout. My AI ran the builds, tests, coverage and leak checks in my WSL environment and
 on Onyx.
 
 ## Experience
 
-I did not write the code for this project. I asked an AI assistant (Claude) to write it and run
-the checks, the same way I did P2, and to walk me through it afterward. P3 was due two days after
-I started it, so I chose speed over writing it myself.
+I asked Claude to write it and run the checks, the same way I did P2.
 
-The part I understand best is the subnet math, because I already did it by hand for Onyx in A4.
+The most intuitive part of this project was the subnet math because I already done it by hand for Onyx in A4.
 An address is one 32-bit number, the mask keeps the network bits, and the broadcast address is
-the network with every host bit turned on. The program prints the same numbers I worked out on
+just the network with every host bit turned on. The program prints the same numbers I tested out on
 paper.
 
 What happened along the way:
 
-- The handout warns that the obvious mask for `/0` shifts by 32, which C does not define. The
-  assistant checked it in WSL first. On my machine the bad version gives back all ones, so the
+- The handout warned that the obvious mask for `/0` shifts by 32, which C does not define. Claude
+  checked it in WSL first. On my machine the bad version gives back all ones, so the
   default route would only match `0.0.0.0`. There is a test for it now.
 - One error message was wrong. `split 192.168.1.0/24 4294967296` said the count was not a power
   of two, but 2^32 is one. It just does not fit in 32 bits. The message now gives the allowed
