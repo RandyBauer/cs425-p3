@@ -1,4 +1,4 @@
-# Comment added so GitHub registers this workflow; it was missing from the Actions list.
+# Edited: runs-on pinned to ubuntu-24.04 (setup-python has no 3.12.7 for ubuntu-26.04).
 name: Create Submission Report Via GitHub Action
 
 on:
@@ -9,7 +9,7 @@ permissions:
 jobs:
 
   report:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
     - name: Set up Python
       uses: actions/setup-python@v5
