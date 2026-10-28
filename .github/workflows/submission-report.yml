@@ -1,3 +1,4 @@
+# Comment added so GitHub registers this workflow; it was missing from the Actions list.
 name: Create Submission Report Via GitHub Action
 
 on:
