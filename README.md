@@ -149,9 +149,9 @@ on Onyx.
 
 ## Experience
 
-I asked Claude to write it and run the checks, the same way I did P2.
+I asked Claude to write the code and run the checks, the same way I did P2.
 
-The most intuitive part of this project was the subnet math because I already done it by hand for Onyx in A4.
+The most intuitive part of this project was the subnet math because I had already done it by hand for Onyx in A4.
 An address is one 32-bit number, the mask keeps the network bits, and the broadcast address is
 just the network with every host bit turned on. The program prints the same numbers I tested out on
 paper.
