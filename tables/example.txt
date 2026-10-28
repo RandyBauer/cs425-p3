@@ -1,0 +1,8 @@
+# destination      gateway          device
+default            132.178.227.1    eno1
+132.178.227.0/25   direct           eno1
+10.0.0.0/8         10.1.0.1         eth1
+10.1.0.0/16        direct           eth1
+10.1.2.0/24        direct           eth2
+10.1.2.128/25      10.1.2.1         eth2   # a router behind eth2
+192.168.0.0/16     10.1.0.1         eth1
